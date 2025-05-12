@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSPP - Sistema de Saúde Pública e Particular - Pré-cadastro</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.svg">
+    <link rel="stylesheet" href="pre.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 id="titulo"><strong id="sigla">SSPP - </strong>SISTEMA DE SAÚDE PÚBLICA E PARTICULAR</h1>
+    </header>
+
+    <main class="main-content">
+        <section class="info-section">
+            <div class="info-card">
+                <p class="info-texto">Clique neste botão abaixo caso seja médico</p>
+                <div class="info-imagem medico-imagem"></div>
+                <button class="cta-button" onclick="window.location.href= 'cadastromedico.html' ">Clique aqui</button>
+            </div>
+            <div class="info-card">
+                <p class="info-texto">Clique neste botão abaixo caso seja paciente</p>
+                <div class="info-imagem paciente-imagem"></div>
+                <button class="cta-button" onclick="window.location.href= 'cadastropaciente.html' ">Clique aqui</button>
+            </div>
+        </section>
+        <div style="text-align: center;">
+                <button class="cta-button" onclick="window.location.href= 'index.html' ">Voltar ao início</button>
+        </div>
+    </main>
+</body>
+</html>

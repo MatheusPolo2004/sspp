@@ -1,0 +1,190 @@
+html, body{
+    overflow: hidden;
+}
+.cabecalho{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    background: #FF9C08
+}
+#titulo{
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Outfit';
+    font-weight: 450;
+}
+
+#img2{ 
+    width: 450px;
+    height: 330px;
+    left: 1311px;
+    top: 236px;
+    background: url(img/img2.jpg) no-repeat;
+    background-size: contain;
+    float: right;
+    margin-top: 90px;
+    margin-right: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(17, 17, 17, 0.25));
+}
+
+#texto-img2{
+    position: absolute;
+    width: 450px;
+    height: 330px;
+    left: 1075px;
+    top: 236px;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 45px;
+    float: right;
+    margin-top: 110px;
+    margin-right: 10px;
+
+    color: #000000;
+
+}
+
+#img1{
+    width: 450px;
+    height: 330px;
+    left: 73px;
+    top: 688px;
+    background: url(img/exames-resultados.jpg) no-repeat;
+    background-size: contain;
+    float: left;
+    margin-top: 390px;
+    margin-left: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(17, 17, 17, 0.25));
+}
+
+#texto-img1{
+    width: 450px;
+    height: 330px;
+    left: 1075px;
+    top: 236px;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 45px;
+    float: left;
+    margin-top: 650px;
+    margin-left: 20px;
+    white-space: nowrap;
+    color: #000000;
+}
+
+
+.cadastro-group {
+    position: absolute;
+    right: 120px;
+    top: 430px;
+    width: 485px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#texto3, #texto4 {
+    width: 100%;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 45px;
+    color: #000000;
+    text-align: right;
+}
+
+#cadastrar {
+    width: auto;
+    min-width: 200px;
+    max-width: 100%;
+    height: auto;
+    min-height: 60px;
+    background-color: #FF9C08;
+    border-radius: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+}
+
+#textocad {
+    width: auto;
+    height: auto;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 45px;
+    color: #000000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    white-space: nowrap;
+}
+
+#textologin {
+    color: #000000;
+    text-decoration-line: underline;
+}
+
+#textologin:hover {
+    color: #FF9C08;
+}
+
+#cadastrar:hover{
+    background-color: #e88c00;
+    text-decoration-line: underline;
+}
+
+#textocad:hover {
+    text-decoration-line: underline;
+    background-color: #e88c00;
+}
+
+
+#logo{
+    width: 100%;
+    height: 330px;
+    background: url(img/SSPP\ logo\ \(20240821042302\).png) no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0px 4px 4px rgba(17, 17, 17, 0.25));
+    position: absolute; 
+    left: 0; 
+    top: 688px;
+    margin-top: 20px;
+    margin-left: -835px;
+    z-index: 9999; 
+    transform: translateY(-1080px);
+    
+}
+
+#texto5 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 45px;
+    color: #000000;
+    text-align: center;
+    font-family: 'Orelega One';
+    position: absolute; 
+    left: 0; 
+    top: 688px;
+    margin-top: 20px;
+    margin-left: -500px;
+    z-index: 9999; 
+    transform: translateY(-1020px);
+    
+}

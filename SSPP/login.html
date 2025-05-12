@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSPP - Sistema de Saúde Pública e Particular - Login</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.svg">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 id="titulo"><strong id="sigla">SSPP - </strong>SISTEMA DE SAÚDE PÚBLICA E PARTICULAR</h1>
+    </header>
+    <form action="login.php" method="POST">
+        <div class="tela-login">
+            <h1 id="facalogin">FAÇA SEU LOGIN</h1>
+            <p id="texto">CRM/CPF</p>
+            <input name="crm_cpf" type="text" required style="text-transform: uppercase">
+            <br><br>
+            <p id="texto">Senha</p>
+            <input name="senha" type="password" required>
+            <br><br>
+            <button>Entrar</button>
+            <p id="texto2">Caso ainda não seja usuário, <a href="pre.html" id="textologin">cadastre-se</a></p>
+        </div>
+    </form>
+</body>
+</html>

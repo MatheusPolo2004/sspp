@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSPP - Sistema de Saúde Pública e Particular - Cadastro Médico</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.svg">
+    <link rel="stylesheet" href="cadmedico.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 id="titulo"><strong id="sigla">SSPP - </strong>SISTEMA DE SAÚDE PÚBLICA E PARTICULAR</h1>
+    </header>
+
+    <div class="container">
+        <header>CADASTRO MÉDICO</header>
+
+        <form action="cadastromedico.php" method="POST">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Dados Pessoais</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Nome Completo</label>
+                            <input name="med_nome" type="text" placeholder="Informe seu nome" maxlength="100" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Date de Nascimento</label>
+                            <input name="med_dtnasc" type="date" placeholder="Informe sua data de nascimento" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Cidade</label>
+                            <input name="med_cidade" type="text" placeholder="Informe sua cidade" maxlength="100" required>
+                        </div>
+                        <div class="input-field">
+                            <label>CPF</label>
+                            <input name="med_cpf" type="text" placeholder="Informe seu CPF (apenas números)" maxlength="11" required>
+                        </div>
+                        <div class="input-field">
+                            <label>UF</label>
+                            <select id="estado" name="med_uf" required> 
+                                <option value=""></option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>                            
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>CRM (Informe o número seguido da sigla do estado)</label>
+                            <input name="med_crm" type="text" placeholder="000000UF" maxlength="8" 
+                            required style="text-transform: uppercase" oninput="this.value = this.value.toUpperCase()">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>E-mail</label>
+                            <input name="med_email" type="text" placeholder="Informe seu e-mail" maxlength="100" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Sistema de Saúde</label>
+                            <select name="med_sistema" id="sistema" required>
+                                <option value=""></option>
+                                <option value="publico">Público</option>
+                                <option value="particular">Particular</option>
+                                <option value="ambos">Ambos</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Número de Telefone</label>
+                            <input name="med_fone" type="text" placeholder="Informe seu número" maxlength="14" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Senha</label>
+                            <input name="med_senha" type="password" placeholder="Informe sua senha" maxlength="100" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Confirmação Senha</label>
+                            <input name="med_cfsenha" type="password" placeholder="Repita sua senha" maxlength="100" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Nome do Consultório</label>
+                            <input name="med_consultorio" type="text" placeholder="Opcional *" maxlength="100">
+                        </div>
+
+                        <button class="nextbtn" onclick="window.location.href= 'pre.html'">
+                            <span class="btntexto">Voltar</span>
+                        </button>
+                        <button class="nextbtn">
+                            <span class="btntexto">Cadastrar</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>    
+
+</body>
+</html>

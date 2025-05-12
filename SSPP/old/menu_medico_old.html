@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSPP - Sistema de Saúde Pública e Particular</title>
+    <link rel="stylesheet" href="menu_medico.css">
+    <link rel="icon" type="image/x-icon" href="img/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <header>
+        <h1 id="titulo"><strong id="sigla">SSPP - </strong>SISTEMA DE SAÚDE PÚBLICA E PARTICULAR</h1>
+    </header>
+    <form action="menu_medico.php" method="POST" enctype="multipart/form-data">
+    <div class="container">
+        <section class="exam-details">
+            <h2>Exames Realizados</h2>
+            <form>
+                <div class="exam-item">
+                    <label for="tipo-exame">Tipo de Exame:</label>
+                    <input type="text" id="tipo-exame" name="ex_descricao">
+
+                    <label for="data">Data do Exame:</label>
+                    <input type="date" id="data" name="ex_data">
+
+                    <label for="Tipo">Área/Especialidade:</label>
+                    <input type="text" id="descricao" name="ex_area">
+
+                    <!--<label for="medico">CPF do Paciente:</label>
+                    <input type="text" id="medico" name="ex_pac_cpf">-->
+                    <!-- Campo CPF do Paciente -->
+
+                    <!-- Campo CPF do Paciente -->
+<label for="ex_pac_cpf">CPF do Paciente:</label>
+<input type="text" id="ex_pac_cpf" name="ex_pac_cpf" onblur="verificarCPF()">
+<span id="cpfFeedback" style="color: red;"></span>
+
+<script>
+function verificarCPF() {
+    var cpf = document.getElementById("ex_pac_cpf").value;
+    var cpfFeedback = document.getElementById("cpfFeedback");
+
+    if (cpf.length === 11) { // Verifique se o CPF possui 11 dígitos
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "verifica_cpf.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if (xhr.responseText === "nao_existe") {
+                    cpfFeedback.innerHTML = 'Paciente não cadastrado com este CPF. <a href="cadastropaciente2.html">Cadastrar?</a><br><br>';
+                } else {
+                    cpfFeedback.innerHTML = '';
+                }
+            }
+        };
+        xhr.send("cpf=" + cpf);
+    } else {
+        cpfFeedback.innerHTML = 'CPF do paciente inválido. <br><br>';
+    }
+}
+</script>
+
+                    <!--<label for="medico">Informe seu CRM:</label>
+                    <input type="text" id="medico" name="ex_med_crm">-->
+
+                    <label>Sistema de Saúde</label>
+                    <select name="ex_sistema" id="sistema" required>
+                        <option value=""></option>
+                        <option value="Público">Público</option>
+                        <option value="Particular">Particular</option>
+                    </select>
+                    <br><br><br>
+                    <label for="obs">Observações:</label>
+                    <textarea id="obs" name="ex_obs" rows="4" maxlength="150"></textarea>
+                </div>
+                
+                <!-- Botão de Salvar Exames -->
+                <button type="submit" class="save-btn">Salvar Exame</button>
+
+                <!-- Botão de Limpar Dados -->
+                <button type="reset" class="save-btn">Limpar Dados</button>
+
+                <!-- Botão de Escolher Arquivo -->
+                <div class="upload-container">
+                    <span class="upload-instruction">Clique no botão ao lado para anexar o PDF do exame:</span>
+                    <label for="file-upload" class="custom-file-upload">Escolher Arquivo</label>
+                    <input type="file" id="file-upload" name="pdf_file" accept=".pdf">
+                    <span id="file-name" style="margin-left: 10px;"></span>
+                </div>
+
+                <!-- Botão "Concluir Relatório" centralizado -->
+                <div class="conclude-container">
+                    <button type="button" class="conclude-btn" onclick="window.location.href= 'menu_medico2.php' ">Visualizar Exames</button>
+                    <button type="button" class="conclude-btn" onclick="window.location.href= 'logout.php' ">Sair</button>
+                </div>
+            </form>
+        </section>
+        
+    </div>
+    </form>
+
+    <script>
+        document.getElementById('file-upload').addEventListener('change', function() {
+            var fileName = this.files[0].name;
+            document.getElementById('file-name').textContent = "Arquivo selecionado: " + fileName;
+        });
+    </script>
+    
+    <script>
+        // Função para salvar os dados no localStorage
+        function saveFormData() {
+            const inputs = document.querySelectorAll('input, textarea, select');
+    
+            inputs.forEach(input => {
+                localStorage.setItem(input.id, input.value);
+            });
+        }
+    
+        // Função para restaurar os dados do localStorage
+        function restoreFormData() {
+            const inputs = document.querySelectorAll('input, textarea, select');
+    
+            inputs.forEach(input => {
+                if (localStorage.getItem(input.id)) {
+                    input.value = localStorage.getItem(input.id);
+                }
+            });
+        }
+    
+        // Função para limpar os dados ao enviar o formulário
+        function clearFormData() {
+            const inputs = document.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                localStorage.removeItem(input.id);
+            });
+        }
+    
+        // Restaurar dados ao carregar a página
+        document.addEventListener('DOMContentLoaded', restoreFormData);
+    
+        // Salvar dados ao sair da página
+        window.addEventListener('beforeunload', saveFormData);
+    
+        // Limpar dados ao enviar o formulário
+        document.querySelector('form').addEventListener('submit', clearFormData);
+    </script>
+    
+</body>
+</html>

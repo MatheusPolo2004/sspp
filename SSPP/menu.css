@@ -1,0 +1,14 @@
+.cabecalho{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 75px;
+    background: #FF9C08
+}
+#titulo{
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Outfit';
+    font-weight: 450;
+}
